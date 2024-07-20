@@ -2,7 +2,7 @@
 
 # 游戏和任务列表
 games=("blum" "bobak" "bump" "cexp" "clydetap" "cyber" "djdog" "pocketfi" "solstone" "tomarket" "time" "drum" "yescoin" "tabi" "ice" )
-tasks=("task" "guaji" "farm" "sign")
+tasks=("task" "guaji" "farm" "sign" "play" "level" "hangup")
 
 # 特殊游戏列表
 special_games=("cexp" "blum" "time" "yescoin" "seed" "hexa" "mtk")
@@ -17,15 +17,67 @@ read -p "输入游戏编号: " game_index
 game_index=$((game_index-1))
 game=${games[$game_index]}
 
-# 显示任务列表
+# 过滤出与选定游戏相关的任务
+case $game in
+    "blum")
+        filtered_tasks=("play" "farm")
+        ;;
+    "bobak")
+        filtered_tasks=("farm")
+        ;;
+    "bump")
+        filtered_tasks=("guaji" "sign")
+        ;;
+    "cexp")
+        filtered_tasks=("hangup" "farm" "task")
+        ;;
+    "time")
+        filtered_tasks=("farm" "task")
+        ;;
+    "yescoin")
+        filtered_tasks=("hangup" "task" "sign")
+        ;;
+    "clydetap")
+        filtered_tasks=("guaji" "task")
+        ;;
+    "cyber")
+        filtered_tasks=("task" "level" "guaji")
+        ;;
+    "djdog")
+        filtered_tasks=("task" "guaji" "level")
+        ;;
+    "pocketfi")
+        filtered_tasks=("guaji" "sign" "task")
+        ;;
+    "solstone")
+        filtered_tasks=("farm" "task")
+        ;;
+    "tomarket")
+        filtered_tasks=("sign" "play" "farm" "task")
+        ;;
+    "drum")
+        filtered_tasks=("guaji" "farm" "task")
+        ;;
+    "tabi")
+        filtered_tasks=("sign" "task" "guaji")
+        ;;
+    "ice")
+        filtered_tasks=("guaji" "task")
+        ;;
+    *)
+        filtered_tasks=("${tasks[@]}")
+        ;;
+esac
+
+# 显示过滤后的任务列表
 echo "请选择任务："
-for i in "${!tasks[@]}"; do
-    echo "$((i+1))) ${tasks[$i]}"
+for i in "${!filtered_tasks[@]}"; do
+    echo "$((i+1))) ${filtered_tasks[$i]}"
 done
 
 read -p "输入任务编号: " task_index
 task_index=$((task_index-1))
-task=${tasks[$task_index]}
+task=${filtered_tasks[$task_index]}
 
 screen_name="${game}_${task}"
 
