@@ -35,7 +35,7 @@ case $game in
         filtered_tasks=("farm" "task")
         ;;
     "yescoin")
-        filtered_tasks=("hangup" "task" "sign")
+        filtered_tasks=("hangup" "task" "sign" "level")
         ;;
     "clydetap")
         filtered_tasks=("guaji" "task")
