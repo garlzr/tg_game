@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 游戏和任务列表
-games=("blum" "bobak" "bump" "cexp" "clydetap" "cyber" "djdog" "pocketfi" "solstone" "tomarket" "time" "drum" "yescoin" "tabi" "ice" )
+games=("blum" "bobak" "bump" "cexp" "clydetap" "cyber" "djdog" "pocketfi" "solstone" "tomarket" "time" "drum" "yescoin" "tabi" "ice" "piggy" )
 tasks=("task" "guaji" "farm" "sign" "play" "level" "hangup")
 
 # 特殊游戏列表
@@ -62,6 +62,9 @@ case $game in
         filtered_tasks=("sign" "task" "guaji")
         ;;
     "ice")
+        filtered_tasks=("guaji" "task")
+        ;;
+    "piggy")
         filtered_tasks=("guaji" "task")
         ;;
     *)
