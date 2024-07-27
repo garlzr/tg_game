@@ -67,6 +67,9 @@ case $game in
     "piggy")
         filtered_tasks=("guaji" "task")
         ;;
+    "tapcat_lzr")
+        filtered_tasks=("claim" "task" "mines")
+        ;;
     *)
         filtered_tasks=("${tasks[@]}")
         ;;
