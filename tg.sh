@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 游戏和任务列表
-games=("blum" "bobak" "bump" "cexp" "clydetap" "cyber" "djdog" "pocketfi" "solstone" "tomarket" "time" "drum" "yescoin" "tabi" "ice" "piggy" )
+games=("blum" "bobak" "cexp" "clydetap" "cyber" "djdog" "pocketfi" "solstone" "drum" "yescoin" "tapcat_lzr" "ice" "piggy" )
 tasks=("task" "guaji" "farm" "sign" "play" "level" "hangup")
 
 # 特殊游戏列表
